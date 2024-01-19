@@ -111,29 +111,22 @@
         </div>
     </div>
 
-    <footer class="col-md-12">
-        <hr>
-        <p style="font-size:11px">Documentation
+    <footer class="col-md-12" style="margin-top:0;">
+        <hr style="margin: 5px 0;">
+        <p style="font-size:12px; padding:0 10% 0 10%">Documentation
             built with <a href="https://www.mkdocs.org/">MkDocs</a>.
+            &nbsp;|&nbsp;<span id="updateTime"></span>
             <br>
             <span>
-                <a style="font-weight: 500;">免责声明</a>
-                <br>欢迎访问我们的学习网站。本网站的所有信息仅供参考和学习之用。通过使用本网站提供的信息，您同意接受以下免责声明：
-
-                <br>1.信息准确性：我们尽最大努力确保本网站上提供的所有信息准确无误。然而，我们不对信息的完整性、准确性、可靠性、适用性或可用性作任何明示或暗示的声明或保证。
-
-                <br>2.学习建议：本网站提供的所有学习建议和信息仅供参考之用。我们不对任何因使用本网站信息而产生的任何直接或间接损失负责。
-
-                <br>3.第三方链接：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户而提供。我们对这些第三方网站的内容或可用性不承担任何责任。
-
-                <br>4.知识产权：本网站上的所有内容（包括但不限于文本、图像、视频等）均受版权法保护。未经许可，任何人不得擅自复制、修改、传播或使用这些内容。
-
-                <br>5.服务中断：我们保留随时中断或终止网站服务的权利而无需提前通知。我们不对任何因服务中断而导致的损失承担责任。
-
-                <br>通过使用本网站，即表示您同意遵守本免责声明。如果您不同意本免责声明中的任何内容，请停止使用本网站。
+                <b>&nbsp;&nbsp;免责声明：欢迎访问我们的学习网站。使用本网站，即表示您同意遵守本免责声明。如果您不同意本免责声明中的任何内容，请停止使用本网站。</b>
+                <br>
+                本网站的所有信息仅供参考和学习之用，请您同意接受以下免责声明：1.信息准确性：我们尽最大努力确保本网站上提供的所有信息准确无误。然而，我们不对信息的完整性、准确性、可靠性、适用性或可用性作任何明示或暗示的声明或保证；
+                &nbsp;2.学习建议：本网站提供的所有学习建议和信息仅供参考之用。我们不对任何因使用本网站信息而产生的任何直接或间接损失负责；
+                &nbsp;3.第三方链接：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户而提供。我们对这些第三方网站的内容或可用性不承担任何责任；
+                &nbsp;4.知识产权：本网站上的所有内容（包括但不限于文本、图像、视频等）均受版权法保护；未经许可，任何人不得擅自复制、修改、传播或使用这些内容。
+                <br>
             </span>
         </p>
-        <p id="updateTime" style="font-size:11px"></p>
     </footer>
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -211,7 +204,7 @@
 <script>
     var getUpdateTime = function () {
         var currentTime = new Date();
-        var updateTime = new Date(`2024-01-19 09:25:06`);
+        var updateTime = new Date(`2024-01-19 09:50:51`);
         var timeDiff = currentTime - updateTime;
         relativeTime = null;
         if (timeDiff < 60000) {  // 小于1分钟
