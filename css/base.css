@@ -21,6 +21,26 @@ body::before {
     z-index: -1;
 }
 
+#backToTopButton {
+    position: fixed;
+    bottom: 3rem;
+    right: 20px;
+    background-color: rgba(180, 180, 180, 0.5);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 0;
+    z-index: 999;
+  }
+
+
 body > .container {
     margin-top: 20px;
     min-height: 400px;

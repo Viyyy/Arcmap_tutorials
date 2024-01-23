@@ -63,10 +63,11 @@
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="mailto:reviy-top@outlook.com" class="nav-link"><i
-                                class="fa fa-envelope"></i>&nbsp;与我联系</a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="mailto:reviy-top@outlook.com" class="nav-link">
+                                <i class="fa fa-envelope"></i>&nbsp;与我联系
+                            </a>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -128,6 +129,23 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#5" class="nav-link">5、显示与修改标签</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_6" class="nav-link">要素合并与消融</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#0" class="nav-link">0、导入数据</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1-merge" class="nav-link">1、要素合并 Merge</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-dissolve" class="nav-link">2、要素消融 Dissolve</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -201,7 +219,44 @@
 <ul>
 <li>修改标签样式</li>
 </ul>
-<p><img alt="1705397222100" src="../image/01start/1705397222100.png" /></p></div>
+<p><img alt="1705397222100" src="../image/01start/1705397222100.png" /></p>
+<h1 id="_6">要素合并与消融</h1>
+<h2 id="0">0、导入数据</h2>
+<p><img alt="1705975643285" src="../image/01start/1705975643285.png" /></p>
+<blockquote>
+<p>导入 "演示材料/要素合并与消融/" 文件夹的shp文件</p>
+</blockquote>
+<h2 id="1-merge">1、要素合并 Merge</h2>
+<ul>
+<li>在工具栏的Geoprocessing中可以找到Merge，或者在Search中搜索Merge（Data Management）,点击打开Merge合并工具</li>
+</ul>
+<p><img alt="1705975951314" src="../image/01start/1705975951314.png" /></p>
+<ul>
+<li>选择Input Datasets(要合并的图层)，然后选择保存路径。</li>
+</ul>
+<p><img alt="1705976203596" src="../image/01start/1705976203596.png" /></p>
+<p><img alt="1705976397093" src="../image/01start/1705976397093.png" /></p>
+<blockquote>
+<p>打开属性表，可以发现原来的图层中没有的字段会变成0或null</p>
+</blockquote>
+<h2 id="2-dissolve">2、要素消融 Dissolve</h2>
+<ul>
+<li>在工具栏的Geoprocessing中找到Dissolve或者直接搜索Dissolve（Data Management）</li>
+</ul>
+<p><img alt="1705976537625" src="../image/01start/1705976537625.png" /></p>
+<ul>
+<li>选择merge 和保存路径， 选择Dissolve Field(s)，如果只选FID，则全部都消融为一条数据。</li>
+</ul>
+<p><img alt="1705976842163" src="../image/01start/1705976842163.png" /></p>
+<p><img alt="1705977088340" src="../image/01start/1705977088340.png" /></p>
+<p><img alt="1705977265930" src="../image/01start/1705977265930.png" /></p>
+<blockquote>
+<p>Merge 和 Dissolve的区别是Merge是将多个Layers合并为一个Layers， Dissolove 可以将一个Layers中的多条(n条)数据按某一个字段消融为一条或多条(m条, m&lt;=n)数据。</p>
+</blockquote></div>
+        </div>
+        
+        <div id="backToTopButton">
+            △
         </div>
     </div>
 
@@ -212,13 +267,7 @@
             &nbsp;|&nbsp;<span id="updateTime"></span>
             <br>
             <span>
-                <b>&nbsp;&nbsp;免责声明：欢迎访问我们的学习网站。使用本网站，即表示您同意遵守本免责声明。如果您不同意本免责声明中的任何内容，请停止使用本网站。</b>
-                <br>
-                本网站的所有信息仅供参考和学习之用，请您同意接受以下免责声明：1.信息准确性：我们尽最大努力确保本网站上提供的所有信息准确无误。然而，我们不对信息的完整性、准确性、可靠性、适用性或可用性作任何明示或暗示的声明或保证；
-                &nbsp;2.学习建议：本网站提供的所有学习建议和信息仅供参考之用。我们不对任何因使用本网站信息而产生的任何直接或间接损失负责；
-                &nbsp;3.第三方链接：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户而提供。我们对这些第三方网站的内容或可用性不承担任何责任；
-                &nbsp;4.知识产权：本网站上的所有内容（包括但不限于文本、图像、视频等）均受版权法保护；未经许可，任何人不得擅自复制、修改、传播或使用这些内容。
-                <br>
+                <b>&nbsp;&nbsp;<a onclick="disclaimer()" style="color: blue;text-decoration: underline;font-weight:bold;cursor: pointer;">免责声明</a>：欢迎访问我们的学习网站。使用本网站，即表示您同意遵守本免责声明。如果您不同意本免责声明中的任何内容，请停止使用本网站。</b>
             </span>
         </p>
     </footer>
@@ -296,11 +345,20 @@
 
 </html>
 <script>
+    document.getElementById('backToTopButton').addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    var disclaimer = function() {
+        alert("  本网站的所有信息仅供参考和学习之用，请您同意接受以下免责声明：\n  1.信息准确性：我们尽最大努力确保本网站上提供的所有信息准确无误。然而，我们不对信息的完整性、准确性、可靠性、适用性或可用性作任何明示或暗示的声明或保证；\n  2.学习建议：本网站提供的所有学习建议和信息仅供参考之用。我们不对任何因使用本网站信息而产生的任何直接或间接损失负责；\n  3.第三方链接：本网站可能包含指向第三方网站的链接。这些链接仅为方便用户而提供。我们对这些第三方网站的内容或可用性不承担任何责任;\n  4.知识产权：本网站上的所有内容（包括但不限于文本、图像、视频等）均受版权法保护；未经许可，任何人不得擅自复制、修改、传播或使用这些内容。")
+    }
     var getUpdateTime = function () {
         var currentTime = new Date();
-        var updateTime = new Date(`2024-01-19 10:51:30`);
+        var updateTime = new Date(`2024-01-23 10:34:51`);
         var timeDiff = currentTime - updateTime;
-        var relativeTime = `2024-01-19 10:51:30`;
+        var relativeTime = `2024-01-23 10:34:51`;
         if (timeDiff < 60000) {  // 小于1分钟
             relativeTime = "刚刚更新";
         } 
