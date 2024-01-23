@@ -151,6 +151,31 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="1"><a href="#_7" class="nav-link">网格绘制</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#0_1" class="nav-link">0、导入数据</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#1_1" class="nav-link">1、调整参考坐标系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2_1" class="nav-link">2、创建网格</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3_1" class="nav-link">3、删除不在模板上的点</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#484" class="nav-link">4、计算中心点的84坐标系</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -252,7 +277,85 @@
 <p><img alt="1705977265930" src="../image/01start/1705977265930.png" /></p>
 <blockquote>
 <p>Merge 和 Dissolve的区别是Merge是将多个Layers合并为一个Layers， Dissolove 可以将一个Layers中的多条(n条)数据按某一个字段消融为一条或多条(m条, m&lt;=n)数据。</p>
-</blockquote></div>
+</blockquote>
+<h1 id="_7">网格绘制</h1>
+<h2 id="0_1">0、导入数据</h2>
+<ul>
+<li>使用上一节中按FID消融的图层作为模板，导入此图层</li>
+</ul>
+<p><img alt="1705991907797" src="../image/01start/1705991907797.png" /></p>
+<h2 id="1_1">1、调整参考坐标系</h2>
+<ul>
+<li>在空白处右键-&gt;Data Frame Properties</li>
+</ul>
+<p><img alt="1705992443252" src="../image/01start/1705992443252.png" /></p>
+<ul>
+<li>点击Coordinate System, 这里网格按米为单位，选择CGCS2000坐标系</li>
+</ul>
+<blockquote>
+<p>一步一步找：Projected Coordinate Systems &gt; Gauss Kruger &gt; CGCS2000 &gt; CGCS2000 3 Degree GK CM 114E， 或者直接搜索CGCS2000</p>
+<p>右键Copy and Modify, 自定义一个中心经线为110度的投影坐标系，修改名称和Central Meridian后确定。</p>
+<blockquote>
+<p>中心经线根据实际需要进行修改。
+</p>
+</blockquote>
+</blockquote>
+<p><img alt="1705992436068" src="../image/01start/1705992436068.png" /></p>
+<ul>
+<li>添加常用的坐标系到喜爱，确定修改坐标系</li>
+</ul>
+<p><img alt="1705992779423" src="../image/01start/1705992779423.png" /></p>
+<h2 id="2_1">2、创建网格</h2>
+<ul>
+<li>打开工具栏中的Windows - Catalog， 在System Toolboxes &gt; Data Management Tool.tbx 中找到Sampling &gt; Create Fishnet</li>
+</ul>
+<p><img alt="1705992888759" src="../image/01start/1705992888759.png" /></p>
+<ul>
+<li>设置Create Fishnet参数</li>
+</ul>
+<p><img alt="1705993268001" src="../image/01start/1705993268001.png" /></p>
+<ul>
+<li>生成网格和中心点</li>
+</ul>
+<p><img alt="1705993329910" src="../image/01start/1705993329910.png" /></p>
+<h2 id="3_1">3、删除不在模板上的点</h2>
+<blockquote>
+<p>重新创建了一个网格大小为2000的网格，原来500的太密集了</p>
+</blockquote>
+<ul>
+<li>打开System Toolboxes &gt; Analysis Tools.tbx中的Overlay &gt; Identity工具，选择Input为中心点，Identity为模板，选择保存路径后确定</li>
+</ul>
+<p><img alt="1705993784920" src="../image/01start/1705993784920.png" /></p>
+<ul>
+<li>删除不在模板上的点</li>
+</ul>
+<p><img alt="1705994121260" src="../image/01start/1705994121260.png" /></p>
+<ul>
+<li>删除后的结果</li>
+</ul>
+<p><img alt="1705994162118" src="../image/01start/1705994162118.png" /></p>
+<blockquote>
+<p>删除后需要停止编辑</p>
+<p>没有Editor时，在Cutsomize-Toolbars中打开</p>
+<p><img alt="1705994537744" src="../image/01start/1705994537744.png" /></p>
+</blockquote>
+<h2 id="484">4、计算中心点的84坐标系</h2>
+<ul>
+<li>将坐标系修改为WGS 1984</li>
+</ul>
+<p><img alt="1705994621708" src="../image/01start/1705994621708.png" /></p>
+<ul>
+<li>计算经纬度</li>
+</ul>
+<p><img alt="1705994944796" src="../image/01start/1705994944796.png" /></p>
+<ul>
+<li>导出结果</li>
+</ul>
+<p><img alt="1705995123226" src="../image/01start/1705995123226.png" /></p>
+<ul>
+<li>查看导出的csv文件</li>
+</ul>
+<p><img alt="1705995163070" src="../image/01start/1705995163070.png" /></p></div>
         </div>
 
         <div id="backToTopButton" class="mybutton">
@@ -369,9 +472,9 @@
     }
     var getUpdateTime = function () {
         var currentTime = new Date();
-        var updateTime = new Date(`2024-01-23 11:19:21`);
+        var updateTime = new Date(`2024-01-23 15:32:48`);
         var timeDiff = currentTime - updateTime;
-        var relativeTime = `2024-01-23 11:19:21`;
+        var relativeTime = `2024-01-23 15:32:48`;
         if (timeDiff < 60000) {  // 小于1分钟
             relativeTime = "刚刚更新";
         }
