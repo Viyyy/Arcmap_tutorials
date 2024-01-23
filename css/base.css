@@ -21,10 +21,7 @@ body::before {
     z-index: -1;
 }
 
-#backToTopButton {
-    position: fixed;
-    bottom: 3rem;
-    right: 20px;
+.mybutton {
     background-color: rgba(180, 180, 180, 0.5);
     width: 2rem;
     height: 2rem;
@@ -38,6 +35,17 @@ body::before {
     color: white;
     padding: 0;
     z-index: 999;
+}
+#backToTopButton {
+    position: fixed;
+    bottom: 6.4rem;
+    right: 20px;
+  }
+
+#backToBottomButton {
+    position: fixed;
+    bottom: 3.8rem;
+    right: 20px;
   }
 
 
