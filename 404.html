@@ -10,7 +10,7 @@
     
     
     <link rel="shortcut icon" href="/img/favicon.ico">
-    <title>ArcMap培训
+    <title>ArcMap笔记
     </title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 <body>
     <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="/.">ArcMap培训</a>
+            <a class="navbar-brand" href="/.">ArcMap笔记</a>
             <!-- Expander button -->
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,13 @@
                         <a href="/01start/" class="nav-link">开始</a>
                     </li>
                     <li class="navitem">
-                        <a href="/09tobecontinued/" class="nav-link">待更新</a>
+                        <a href="/02import/" class="nav-link">导入</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="/03tools/" class="nav-link">工具</a>
+                    </li>
+                    <li class="navitem">
+                        <a href="/04drawing/" class="nav-link">制图</a>
                     </li>
                 </ul>
 
@@ -105,7 +111,7 @@
     <script src="/js/base.js"></script>
     <script src="/search/main.js"></script>
 
-    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <!-- <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -164,7 +170,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
     </body>
 
@@ -189,9 +195,9 @@
     }
     var getUpdateTime = function () {
         var currentTime = new Date();
-        var updateTime = new Date(`2024-01-23 15:36:44`);
+        var updateTime = new Date(`2024-01-23 17:29:42`);
         var timeDiff = currentTime - updateTime;
-        var relativeTime = `2024-01-23 15:36:44`;
+        var relativeTime = `2024-01-23 17:29:42`;
         if (timeDiff < 60000) {  // 小于1分钟
             relativeTime = "刚刚更新";
         }
